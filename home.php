@@ -11,6 +11,6 @@
         </table>
         <br />
         <br />
-        <a href="index.php"> revenir vers la page d'accueil</a><br /><br /><br /><br /><br /><br />
+        <a href="index.php">revenir vers la page d'accueil</a><br /><br /><br /><br /><br /><br />
     </body>
 </html>
