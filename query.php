@@ -24,6 +24,7 @@ function lectureArticle(int $id) {
 
     //$id = $article->getIdnews();
     $result = $objPdo->query('SELECT * FROM news WHERE idnews=:id');
+    $result->bindParam(':id', $id);
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
         echo "<tr>";
