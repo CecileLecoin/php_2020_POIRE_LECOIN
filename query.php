@@ -18,11 +18,11 @@ function listArticle()
 }
 
 include_once 'article.php';
-function lectureArticle(Article $article) {
+function lectureArticle(int $id) {
 
     require 'connexionBDD.php';
 
-    $id = $article->getIdnews();
+    //$id = $article->getIdnews();
     $result = $objPdo->query('SELECT * FROM news WHERE idnews=:id');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {

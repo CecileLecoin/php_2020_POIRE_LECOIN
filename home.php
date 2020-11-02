@@ -6,8 +6,11 @@
         <table>
             <?php
                 include 'query.php';
+                include_once 'article.php';
                 listArticle();
-                echo"\n\n\n\n\n"
+                echo"\n\n\n\n\n";
+                $article = new Article(1, "", "", "", "", "");
+                lectureArticle($article->getIdnews())
 
             ?>
         </table>

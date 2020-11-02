@@ -1,14 +1,14 @@
 <?php
 class Article {
 
-    var $idnews;
-    var $idtheme;
-    var $titrenews;
-    var $datenews;
-    var $textenews;
-    var $idredacteur;
+    public $idnews;
+    public $idtheme;
+    public $titrenews;
+    public $datenews;
+    public $textenews;
+    public $idredacteur;
 
-    function Article($idnews, $idtheme, $titrenews, $datenews, $textenews, $idredacteur) {
+    function __construct($idnews, $idtheme, $titrenews, $datenews, $textenews, $idredacteur) {
         $this->idnews = $idnews;
         $this->idtheme = $idtheme;
         $this->titrenews = $titrenews;
@@ -16,6 +16,7 @@ class Article {
         $this->textenews = $textenews;
         $this->idredacteur = $idredacteur;
     }
+
 
 
     public function setIdnews($idnews)
