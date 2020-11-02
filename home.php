@@ -7,6 +7,8 @@
             <?php
                 include 'query.php';
                 listArticle();
+                echo"\n\n\n\n\n"
+
             ?>
         </table>
         <br />
