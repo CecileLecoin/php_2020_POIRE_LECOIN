@@ -9,6 +9,14 @@
         <?php session_start(); 
         $_SESSION['authBDD']=!true;
         ?>
+
+<script language="javascript" type="text/javascript">
+                    function alertejs(){
+
+                        if (!isset($_POST['identifiant']) && !isset($_POST['mdp']))
+                        alert('les champs doivent etre remplis CORRECTEMENT');
+                    }
+                </script>
         <form name="add" method="post" action="authBDD.php">
 				<label for="identifiant">Identifiant :</label>
 				<input type="email" id="identifiant" name="identifiant" size="45" maxlength="60" placeholder="Exemple : caramel@caramail.com" value="">
@@ -20,13 +28,7 @@
 				<br /><br />
                 <input type="submit" name="valider" value="Valider" onclick=alertejs()>
                 
-                <script language="javascript" type="text/javascript">
-                    function alertejs(){
-
-                        if (!isset($_POST['identifiant']) && !isset($_POST['mdp']))
-                        alert('les champs doivent etre remplis CORRECTEMENT');
-                    }
-                </script>
+                
         </form>
 
 
