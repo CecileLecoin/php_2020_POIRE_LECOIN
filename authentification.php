@@ -12,13 +12,12 @@
 
 <script language="javascript" type="text/javascript">
                     function alertejs(){
-                        alert("in")
+                        alert("in" + $_POST['identifiant'] + "\n " + $_POST['mdp'])
 
-                        if (($_POST['identifiant']).trim()=="" || ($_POST['mdp']).trim()=="") {
+                        if (($_POST['identifiant']).trim()=="") {
                         alert('les champs doivent etre remplis CORRECTEMENT');
                         }
-                        else
-                        alert('les champs doivent etre remplis CORRECTEMENT');
+                        
                     }
                 </script>
         <form name="add" method="post" action="authBDD.php">
