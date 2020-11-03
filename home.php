@@ -28,7 +28,6 @@ TODO :
         </table>
         <br />
         <br />
-        <a href="index.php">revenir vers la page d'accueil</a><br /><br /><br />
         <a href="authentification.php">Connexion au compte redacteur</a>
     </body> 
 </html>

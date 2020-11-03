@@ -6,7 +6,7 @@
 		<link rel="stylesheet" href="css/auth.css" />-->
 	</head>
 	<body>
-        <form name="add" method="post" action="auth.php">
+        <form name="add" method="post" action="authBDD.php">
 				<label for="identifiant">Identifiant :</label>
 				<input type="email" id="identifiant" name="identifiant" size="45" maxlength="60" placeholder="Exemple : caramel@caramail.com" value="">
                 
