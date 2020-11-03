@@ -29,7 +29,7 @@ session_start();
 
 
 			function home() {
-				header('Location: ./home.php');
+				return header('Location: ./home.php');
 			}
 			
 			
