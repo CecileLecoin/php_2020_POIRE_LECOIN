@@ -22,7 +22,6 @@ function lectureArticle(int $id) {
 
     require 'connexionBDD.php';
 
-    //$id = $article->getIdnews();
     $result = $objPdo->prepare('SELECT * FROM news WHERE idnews=:id');
     $result->bindParam(':id', $id);
     $result->execute();
