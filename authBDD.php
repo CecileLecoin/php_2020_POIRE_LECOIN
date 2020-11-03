@@ -12,14 +12,16 @@
 				$_SESSION['identifiant'] = $result[0];
                 die();
 
-                echo "<a href=<?php $path_to_home = './home.php';?> \"retour accueil\"></a>";
+                home();
                 
 			}		
 		}
     }
     
-	$_SESSION['authBDD'] = 'false';
+    $_SESSION['authBDD'] = 'false';
+    ?>
+    
+
 	
 	echo "Mauvais identifiant ou mot de passe";
     
-?>

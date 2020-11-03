@@ -23,7 +23,15 @@ session_start();
 			}
 			$co.= '</span>'."\n\t\t\t".'</div>'."\n\t\t";
             echo $co;
-            
-            echo "<a href=<?php $path_to_home = './home.php';?> \"retour accueil\"></a>";
+			
+			$path_to_home="./home.php";
+			echo "<a href=<?php $path_to_home?> \"retour accueil\"></a>";
+
+
+			function home() {
+				header('Location: ./home.php');
+			}
+			
+			
 
 ?>

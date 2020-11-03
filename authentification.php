@@ -18,9 +18,19 @@
                 <label for="mdp">Mot de passe :</label>
 				<input type="mdp" id="mdp" name="mdp" size="35" maxlength="30" value="">
 				<br /><br />
-				<input type="submit" name="valider" value="Valider">
+                <input type="submit" name="valider" value="Valider" onclick=alertejs()>
+                
+                <script language="javascript" type="text/javascript">
+                    function alertejs(){
+
+                        if (!isset($_POST['identifiant']) && !isset($_POST['mdp']))
+                        alert('les champs doivent etre remplis CORRECTEMENT');
+                    }
+                </script>
         </form>
+
+
         
-        <a href=<?php $path_to_home = './home.php';?> "retour accueil"></a>
+        <a href=./home.php >retour accueil</a>
     </body>
 </html>
