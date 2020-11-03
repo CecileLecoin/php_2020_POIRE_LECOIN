@@ -17,7 +17,8 @@ TODO :
     <body>
         <table>
             <?php
-            include 'query.php';
+            require_once 'index.php';
+            include_once 'query.php';
             include_once 'article.php';
             listArticle();
             echo "\n\n\n\n\n";

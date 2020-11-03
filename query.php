@@ -35,7 +35,23 @@ function lectureArticle(int $id) {
         echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";
     }
+}
 
+
+function getRedactorByMail(string $mel, string $mdp) {
+    require 'connexionBDD.php';
+
+    $result = $objPdo->prepare('SELECT * FROM redacteur WHERE adressemail=:mel and motdepasse=:mdp');
+    $result->bindParam(':mel', $mel);
+    $result->bindParam(':mdp', $mdp);
+    $result->execute();
+    if ($row == null) {
+        unset($objPdo);
+        return null;
+    } else {
+        unset($objPdo);
+        return '<p> id="loggedUserName"'.$row['nom'].'<br /> id="loggedUserMail"'.$row['mail'].'</p>';
+    }
 }
 
 ?>

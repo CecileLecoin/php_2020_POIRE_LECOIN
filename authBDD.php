@@ -10,8 +10,11 @@
             if ($result != null) {
 				$_SESSION['authBDD'] = 'true';
 				$_SESSION['identifiant'] = $result[0];
-				die();
-			}			
+                die();
+
+                echo "<a href=<?php $path_to_home = './home.php';?> \"retour accueil\"></a>";
+                
+			}		
 		}
     }
     
