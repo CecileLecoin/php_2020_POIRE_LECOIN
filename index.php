@@ -17,6 +17,7 @@ session_start();
 			$co.='<div class="authstatus '.(($auth)?'connected':'disconnected').'">'."\n\t\t\t\t";
 			$co.='<span id="status">';
 			if ($auth) {
+				echo "id = " + $_SESSION['identifiant'] + " et mdp = " + $_SESSION['mdp'];
 				$co .= getRedactorByMail($_SESSION['identifiant'], $_SESSION['mdp']);
 			} else {
 				$co .= 'Déconnecté';
