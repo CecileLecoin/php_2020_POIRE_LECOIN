@@ -17,6 +17,8 @@
                         if (($_POST['identifiant']).trim()=="" || ($_POST['mdp']).trim()=="") {
                         alert('les champs doivent etre remplis CORRECTEMENT');
                         }
+                        else
+                        alert('les champs doivent etre remplis CORRECTEMENT');
                     }
                 </script>
         <form name="add" method="post" action="authBDD.php">
