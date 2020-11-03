@@ -12,8 +12,9 @@
 
 <script language="javascript" type="text/javascript">
                     function alertejs(){
+                        alert("in")
 
-                        if (($_POST['identifiant']).trim()=="" && ($_POST['mdp']).trim()=="") {
+                        if (($_POST['identifiant']).trim()=="" || ($_POST['mdp']).trim()=="") {
                         alert('les champs doivent etre remplis CORRECTEMENT');
                         }
                     }

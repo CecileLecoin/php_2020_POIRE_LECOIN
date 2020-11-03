@@ -30,6 +30,6 @@ TODO :
         <br />
         <br />
         <a href="authentification.php">Connexion au compte redacteur</a>
-        
+
     </body> 
 </html>
