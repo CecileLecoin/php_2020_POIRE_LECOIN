@@ -18,7 +18,7 @@ session_start();
 			$co.='<span id="status">';
 			if ($auth) {
 				echo "id = " + $_SESSION['identifiant'] + " et mdp = " + $_SESSION['mdp'];
-				$co .= getRedactorByMail($_SESSION['identifiant'], $_SESSION['mdp']);
+				$co .= getRedactorById($_SESSION['id']);
 			} else {
 				$co .= 'Déconnecté';
 			}

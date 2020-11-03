@@ -38,12 +38,11 @@ function lectureArticle(int $id) {
 }
 
 
-function getRedactorByMail(string $mel, string $mdp) {
+function getRedactorById(int $id) {
     require 'connexionBDD.php';
 
-    $result = $objPdo->prepare('SELECT * FROM redacteur WHERE adressemail=:mel and motdepasse=:mdp');
-    $result->bindParam(':mel', $mel);
-    $result->bindParam(':mdp', $mdp);
+    $result = $objPdo->prepare('SELECT * FROM redacteur WHERE idredacteur=:id');
+    $result->bindParam(':id', $id);
     $result->execute();
     if ($row == null) {
         unset($objPdo);
