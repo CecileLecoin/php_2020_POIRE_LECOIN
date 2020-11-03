@@ -10,27 +10,16 @@
         $_SESSION['authBDD']=!true;
         ?>
 
-<script language="javascript" type="text/javascript">
-                    function alertejs(){
-                        alert("in" + "\n ");
-                         var user = $_POST['identifiant'];
-                        var mdp =$_POST['mdp'];
-                        if ((user.trim()=="")) {
-                        alert('les champs doivent etre remplis CORRECTEMENT');
-                        }
-                        
-                    }
-                </script>
         <form name="add" method="post" action="authBDD.php">
 				<label for="identifiant">Identifiant :</label>
-				<input type="email" id="identifiant" name="identifiant" size="45" maxlength="60" placeholder="Exemple : caramel@caramail.com" value="">
+				<input type="email" id="identifiant" name="identifiant" size="45" maxlength="60" placeholder="Exemple : caramel@caramail.com" value="" required>
                 
                 <br /><br />
                 
                 <label for="mdp">Mot de passe :</label>
-				<input type="mdp" id="mdp" name="mdp" size="35" maxlength="30" value="">
+				<input type="mdp" id="mdp" name="mdp" size="35" maxlength="30" value="" required>
 				<br /><br />
-                <input type="submit" name="valider" value="Valider" onclick=alertejs()>
+                <input type="submit" name="valider" value="Valider">
                 
                 
         </form>

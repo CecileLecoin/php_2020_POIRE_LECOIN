@@ -19,9 +19,6 @@
     }
     
     $_SESSION['authBDD'] = 'false';
-    ?>
-    
-
-	
 	echo "Mauvais identifiant ou mot de passe";
     
+    ?>

@@ -31,5 +31,8 @@ TODO :
         <br />
         <a href="authentification.php">Connexion au compte redacteur</a>
 
+        <?php
+        $co 
+        ?>
     </body> 
 </html>
