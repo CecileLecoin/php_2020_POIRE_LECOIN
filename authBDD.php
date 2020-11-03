@@ -11,6 +11,7 @@
             if ($result != null) {
 				$_SESSION['authBDD'] = 'true';
 				$_SESSION['identifiant'] = $result[0];
+				$_SESSION['mdp'] = $result[1];
 				
 				home();
 				die();
