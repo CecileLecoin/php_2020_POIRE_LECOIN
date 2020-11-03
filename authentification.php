@@ -13,8 +13,9 @@
 <script language="javascript" type="text/javascript">
                     function alertejs(){
 
-                        if (!isset($_POST['identifiant']) && !isset($_POST['mdp']))
+                        if (($_POST['identifiant']).trim()=="" && ($_POST['mdp']).trim()=="") {
                         alert('les champs doivent etre remplis CORRECTEMENT');
+                        }
                     }
                 </script>
         <form name="add" method="post" action="authBDD.php">
