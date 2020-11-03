@@ -10,9 +10,10 @@
             if ($result != null) {
 				$_SESSION['authBDD'] = 'true';
 				$_SESSION['identifiant'] = $result[0];
-                die();
+				home();
+				die();
 
-                home();
+                
                 
 			}		
 		}
