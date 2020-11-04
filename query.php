@@ -84,7 +84,7 @@ function showRedacteurById(int $id)
     $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
         $result2->bindParam(':id', $id);
         $result2->execute();  
-        while ($row=$result->fetch(PDO::FETCH_OBJ))
+        while ($row=$result2->fetch(PDO::FETCH_OBJ))
     {
         echo "<td>" . $row->nom . "</td>";
         echo "<td>" . $row->prenom . "</td>";      

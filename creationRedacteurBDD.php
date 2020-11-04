@@ -9,6 +9,8 @@ function creationRedacteur()
         $prenom = $_POST['prenom'];
         $identifiant = $_POST['identifiant'];
         $mdp = $_POST['mdp'];
+
+
     }
 }
 ?>
