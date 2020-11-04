@@ -7,9 +7,10 @@
     <body>
         <?php session_start();
         $_SESSION['authBDD'] = !true;
+        include_once "creationRedacteurBDD.php";
         ?>
 
-        <form method="post" action="creationRedacteurBDD.php">
+        <form method="post" action="creationRedacteur">
             <label for="nom">Nom :</label>
             <input name="nom" size="45" maxlength="60" value="" required>
 
