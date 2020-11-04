@@ -70,9 +70,19 @@ function lireArticle(string $titre) // recupere un article par son titre
         echo "<td>" . $row->datenews . "</td>";
         echo "<td>" . $row->textenews . "</td>";
         $redac= $row->idredacteur;
+        showRedacteurById($redac);
     }
-        $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=1');
-        $result2->bindParam(':id', $redac);
+        
+
+    
+}
+
+function showRedacteurById(int $id)
+{
+    require 'connexionBDD.php';
+    
+    $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
+        $result2->bindParam(':id', $id);
         $result2->execute();  
         while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
@@ -80,8 +90,6 @@ function lireArticle(string $titre) // recupere un article par son titre
         echo "<td>" . $row->prenom . "</td>";      
         echo "</tr>";
     }
-
-    
 }
 
 
