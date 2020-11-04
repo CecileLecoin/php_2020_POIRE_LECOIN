@@ -23,7 +23,9 @@ session_start();
 				$co .= 'Déconnecté';
 			}
 			$co.= '</span>'."\n\t\t\t".'</div>'."\n\t\t";
-            echo $co;
+			echo $co;
+			
+			$arr=getThem();
 			
 			$path_to_home="./home.php";
 			echo "<a href=$path_to_home>retour accueil</a>";
