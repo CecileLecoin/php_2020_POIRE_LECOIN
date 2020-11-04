@@ -71,7 +71,7 @@ function lireArticle(string $titre) // recupere un article par son titre
         echo "<td>" . $row->textenews . "</td>";
         $redac= $row->idredacteur;
     }
-        $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
+        $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:1');
         $result2->bindParam(':id', $redac);
         $result2->execute();  
         while ($row=$result->fetch(PDO::FETCH_OBJ))
