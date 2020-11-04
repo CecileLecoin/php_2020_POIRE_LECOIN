@@ -14,8 +14,8 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
         /*echo "<td>" . $row->idnews . "</td></br>";
         echo "<td>" . $row->idtheme . "</td></br>";*/
         echo '<td id=titre><form method ="get" action ="lectureArticle.php"><input type="text" id="titrenews" name="titrenews" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br></br>';
-        echo "</tr><tr><td>" . $row->datenews . "</td>";
-        echo "</tr><tr><td>" . $row->textenews . "</td>";
+        echo "<td>" . $row->datenews . "</td>";
+        echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";
     }
 }
@@ -64,9 +64,9 @@ function lireArticle(string $titre) // recupere un article par son titre
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
         echo "<tr>";
-        echo "<td>" . $row->idnews . "</td>";
-        echo "<td>" . $row->idtheme . "</td>";
-        echo "<td>" . $row->titrenews . "</td>";
+        /*echo "<td>" . $row->idnews . "</td>";
+        echo "<td>" . $row->idtheme . "</td>";*/
+        echo "<td>" . $row->titrenews . "</td></br></br></br>";
         echo "<td>" . $row->datenews . "</td>";
         echo "<td>" . $row->textenews . "</td>";
         $redac= $row->idredacteur;
@@ -111,10 +111,10 @@ function mailRedacteurIsAlreadyUse(string $mail)
     $result = $objPdo->prepare('SELECT idredacteur FROM redacteur WHERE adressemail=:mail');
     $result->bindParam(':mail', $mail);
     $result->execute();
-    $row = $result->fetch(PDO::FETCH_OBJ)
-        if ($row == "") {
-            // return 
-        }
+    
+    if ($result->row) {
+        // return 
+    }
 }
 
 ?>
