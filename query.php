@@ -142,6 +142,7 @@ function creationRedacteur()
     $result->bindParam(':mail', $mail);
     $result->bindParam(':mdp', $mdp);
     $result->execute();
+    // $id =  mysql_insert_id();
 
 }
 

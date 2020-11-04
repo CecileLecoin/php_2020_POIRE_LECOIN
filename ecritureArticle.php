@@ -13,7 +13,7 @@
                 $arr=getTheme();
                 for($i; count($arr); $i++)
                 {
-
+                    echo "<option unselected>". $arr[$i]->description ."</option>";
                 }
             }
 
