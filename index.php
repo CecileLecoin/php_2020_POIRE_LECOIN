@@ -25,7 +25,7 @@ session_start();
 			$co.= '</span>'."\n\t\t\t".'</div>'."\n\t\t";
 			echo $co;
 			
-			$arr=getThem();
+			$arr=getThem(); //fct dans le query.php qui stocke les articles dans un tableau d'articles 
 			
 			$path_to_home="./home.php";
 			echo "<a href=$path_to_home>retour accueil</a>";

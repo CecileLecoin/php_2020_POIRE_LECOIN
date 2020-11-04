@@ -1,6 +1,6 @@
 <?php
 
-function listArticle()
+function listArticle() //donne tous les articles et les ecrit + bonus = clicker sur le texte mene à une page avec l'article en entier
 {
     require 'connexionBDD.php';
     include_once 'index.php';
@@ -35,7 +35,7 @@ function getThem()
 }
 
 include_once 'article.php';
-function lectureArticle(int $id) {
+function lectureArticle(int $id) { //recupere un article par son id
 
     require 'connexionBDD.php';
 
@@ -54,7 +54,7 @@ function lectureArticle(int $id) {
     }
 }
 
-function lireArticle(string $titre)
+function lireArticle(string $titre) // recupere un article par son titre
 {
     require 'connexionBDD.php';
 
@@ -69,15 +69,16 @@ function lireArticle(string $titre)
         echo "<td>" . $row->titrenews . "</td>";
         echo "<td>" . $row->datenews . "</td>";
         echo "<td>" . $row->textenews . "</td>";
-
+        $redac= $row->idredacteur;
+    }
         $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
-        $result2->bindParam(':id', $row->idredacteur);
+        $result2->bindParam(':id', $redac);
         $result2->execute();  
         echo "<td>" . $row->nom . "</td>";
         echo "<td>" . $row->prenom . "</td>";      
         echo "</tr>";
 
-    }
+    
 }
 
 

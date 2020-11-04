@@ -13,6 +13,8 @@
                 if($article->getTitrenews()==$v3)
                     $article->setIdnews($compArticle->getIdnews());
             }*/
+            echo (isset($_GET['titrenews']));
+            echo ($_GET['titrenews']);
             lireArticle($_GET['titrenews']);
             //lectureArticle($article->getIdnews());
 
