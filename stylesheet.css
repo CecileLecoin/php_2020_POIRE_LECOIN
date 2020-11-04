@@ -14,7 +14,7 @@ body {
 
   table, td, tr {
     margin : 200px;
-    padding: 150px;
+    padding: 20px;
     background-color: rgb(77, 104, 145);
     color : white;
   }
