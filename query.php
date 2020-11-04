@@ -92,6 +92,7 @@ function getRedactorById(int $id) {
     $result = $objPdo->prepare('SELECT * FROM redacteur WHERE idredacteur=:id');
     $result->bindParam(':id', $id);
     $result->execute();
+    while ($)
     if ($row == null) {
         unset($objPdo);
         return null;
@@ -105,7 +106,10 @@ function mailRedacteurIsAlreadyUse(string $mail)
 {
     require 'connexionBDD.php';
 
-    $result = $objPdo->prepare('SELECT *');
+    $result = $objPdo->prepare('SELECT idredacteur FROM redacteur WHERE adressemail=:mail');
+    $result->bindParam(':mail', $mail);
+    $result->execute();
+
 }
 
 ?>

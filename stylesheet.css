@@ -12,11 +12,9 @@ body {
     font-size: 20px;
   }
 
-  td {
-    margin-top: 100px;
-    margin-bottom: 100px;
-    margin-right: 150px;
-    margin-left: 150px;
+  table, td, tr {
+    margin : 200px;
+    padding: 150px;
     background-color: rgb(77, 104, 145);
     color : white;
   }
