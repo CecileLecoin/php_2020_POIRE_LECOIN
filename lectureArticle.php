@@ -23,7 +23,8 @@
         </table>
         <br />
         <br />
-        <a href="authentification.php">Connexion au compte redacteur</a>
+        <a href="authentification.php">Connexion au compte redacteur</a></br>
+        <a href="home.php">Retour accueil</a>
 
         <?php
         $co 

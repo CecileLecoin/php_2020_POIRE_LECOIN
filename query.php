@@ -34,6 +34,19 @@ function getThem()
     return $arr;
 }
 
+function getTheme()
+{
+    require 'connexionBDD.php';
+    include_once 'index.php';
+
+    $result = $objPdo->query('SELECT * FROM theme');
+    while ($row=$result->fetch(PDO::FETCH_OBJ))
+    {
+        $arr[]= new Theme($row->idtheme, $row->description);
+    }
+    return $arr;
+}
+
 include_once 'article.php';
 /*function lectureArticle(int $id) { //recupere un article par son id
 
@@ -68,7 +81,7 @@ function lireArticle(string $titre) // recupere un article par son titre
         echo "<td>" . $row->idtheme . "</td>";*/
         echo "</tr><tr><td>" . $row->titrenews . "</td></br></br></br>";
         echo "</tr><tr><td>" . $row->datenews . "</td>";
-        echo "</tr><tr><td>" . $row->textenews . "</td>";
+        //echo "</tr><tr><td>" . $row->textenews . "</td>";
         $redac= $row->idredacteur;
         $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
         $result2->bindParam(':id', $redac);
@@ -109,14 +122,27 @@ function mailRedacteurIsAlreadyUse(string $mail)
     $result->bindParam(':mail', $mail);
     $result->execute();
     
-    if ($result->rowCount() > 0) 
+    if ($result->rowCount() > 0)
     {
         return true;
     }
-    else 
+    else
     {
         return false;
     }
+}
+
+function creationRedacteur()
+{
+    require 'connexionBDD.php';
+
+    $result = $objPdo->prepare('INSERT INTO redacteur (nom, prenom, adressemail, motdepasse) VALUE (:nom, :prenom, :mail, :mdp)');
+    $result->bindParam(':nom', $nom);
+    $result->bindParam(':prenom', $prenom);
+    $result->bindParam(':mail', $mail);
+    $result->bindParam(':mdp', $mdp);
+    $result->execute();
+
 }
 
 ?>

@@ -23,8 +23,8 @@ TODO :
             include_once 'article.php';
             listArticle();
             echo "\n\n\n\n\n";
-            $article = new Article(1, "", "", "", "", "");
-            lectureArticle($article->getIdnews())
+            //$article = new Article(1, "", "", "", "", "");
+            //lectureArticle($article->getIdnews())
 
             ?>
         </table>

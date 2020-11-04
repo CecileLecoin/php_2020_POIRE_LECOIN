@@ -9,7 +9,7 @@ $messgErreur=""; // initialise message d'erreur
 				'lecoin2u_appli', '31603422');
         $objPdo -> exec("SET CHARACTER SET utf8");
 
-		echo "connexion ok<br/>\n";
+		//echo "connexion ok<br/>\n";
 
 	} catch( Exception $exception )
 	{
