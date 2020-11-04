@@ -105,7 +105,7 @@ function mailRedacteurIsAlreadyUse(string $mail)
 {
     require 'connexionBDD.php';
 
-    $result = $objPdo->prepare('SELECT *')
+    $result = $objPdo->prepare('SELECT *');
 }
 
 ?>

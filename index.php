@@ -38,3 +38,5 @@ session_start();
 			
 
 ?>
+
+<link rel="stylesheet" href="stylesheet.css" />

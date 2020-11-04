@@ -1,5 +1,6 @@
 <head>
         <title>Liste des articles</title>
+        <link rel="stylesheet" href="stylesheet.css" />
     </head>
 
     <body>
