@@ -3,14 +3,17 @@
 function listArticle()
 {
     require 'connexionBDD.php';
+    include_once 'index.php';
 
+    $arr[]=array();
     $result = $objPdo->query('SELECT * FROM news');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
+        $arr[]= new Article($row->idnews, $row->idtheme ,$row->titrenews , $row->datenews, $row->textenews, $row->idredacteur);
         echo "<tr>";
         echo "<td>" . $row->idnews . "</td>";
         echo "<td>" . $row->idtheme . "</td>";
-        echo "<td>" . $row->titrenews . "</td>";
+        echo '<td id=titre><form method ="get" action ="lectureArticle.php"><input type="text" id="titrenews" name="titrenews" placeholder="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td>';
         echo "<td>" . $row->datenews . "</td>";
         echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";

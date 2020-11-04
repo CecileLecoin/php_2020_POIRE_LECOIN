@@ -26,7 +26,7 @@ session_start();
             echo $co;
 			
 			$path_to_home="./home.php";
-			echo "<a href=<?php $path_to_home?> \"retour accueil\"></a>";
+			echo "<a href=$path_to_home>retour accueil</a>";
 
 
 			function home() {
