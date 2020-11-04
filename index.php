@@ -1,13 +1,13 @@
 <?php
 session_start();
 			if (isset($_SESSION['authBDD'])) {
-				if ($_SESSION['authBDD'] == 'true') {
+				if ($_SESSION['authBDD'] == 'true') { //La session est celle d'un redacteur (redacteur est connecté)
 					$auth = true;
 				} else {
 					$auth = false;
 				}
 			} else {
-				$_SESSION['authBDD'] = 'false';
+				$_SESSION['authBDD'] = 'false'; // La session est celle d'un lecteur
 				$auth = false;
             }
             
@@ -15,7 +15,7 @@ session_start();
 			include_once 'query.php';
 			$co="\t";
 			$co.='<div class="authstatus '.(($auth)?'connected':'disconnected').'">'."\n\t\t\t\t";
-			$co.='<span id="status">';
+			$co.='<id="status">';
 			if ($auth) {
 				echo "id = " + $_SESSION['identifiant'] + " et mdp = " + $_SESSION['mdp'];
 				$co .= getRedactorById($_SESSION['id']);
