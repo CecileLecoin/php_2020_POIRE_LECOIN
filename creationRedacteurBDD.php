@@ -19,7 +19,7 @@ function creationRedacteur()
         else 
         {
             creationRedacteur();
-            
+
         }
 
     }
