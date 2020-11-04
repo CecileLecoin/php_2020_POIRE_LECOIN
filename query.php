@@ -85,21 +85,6 @@ function lireArticle(string $titre) // recupere un article par son titre
     
 }
 
-function showRedacteurById(int $id)
-{
-    require 'connexionBDD.php';
-    
-    $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
-        $result2->bindParam(':id', $id);
-        $result2->execute();  
-        while ($row=$result2->fetch(PDO::FETCH_OBJ))
-    {
-        echo "<td>" . $row->nom . "</td>";
-        echo "<td>" . $row->prenom . "</td>";      
-        echo "</tr>";
-    }
-}
-
 
 function getRedactorById(int $id) {
     require 'connexionBDD.php';
@@ -114,6 +99,13 @@ function getRedactorById(int $id) {
         unset($objPdo);
         return '<p> id="loggedUserName"'.$row['nom'].'<br /> id="loggedUserMail"'.$row['mail'].'</p>';
     }
+}
+
+function mailRedacteurIsAlreadyUse(string $mail) 
+{
+    require 'connexionBDD.php';
+
+    $result = $objPdo->prepare('SELECT *')
 }
 
 ?>
