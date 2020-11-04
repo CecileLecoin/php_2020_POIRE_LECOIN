@@ -26,6 +26,6 @@
 
 
         
-        <a href=./home.php >retour accueil</a>
+        <a href=./home.php >retour accueil</a></br>
     </body>
 </html>

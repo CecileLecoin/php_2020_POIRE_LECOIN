@@ -14,7 +14,7 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
         /*echo "<td>" . $row->idnews . "</td></br>";
         echo "<td>" . $row->idtheme . "</td></br>";*/
         echo '<td id=titre><form method ="get" action ="lectureArticle.php"><input type="text" id="titrenews" name="titrenews" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br></br>';
-        echo "<td>" . $row->datenews . "</td>";
+        echo "</tr><tr><td>" . $row->datenews . "</td>";
         echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";
     }
@@ -35,7 +35,7 @@ function getThem()
 }
 
 include_once 'article.php';
-function lectureArticle(int $id) { //recupere un article par son id
+/*function lectureArticle(int $id) { //recupere un article par son id
 
     require 'connexionBDD.php';
 
@@ -52,7 +52,7 @@ function lectureArticle(int $id) { //recupere un article par son id
         echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";
     }
-}
+}*/
 
 function lireArticle(string $titre) // recupere un article par son titre
 {
@@ -80,9 +80,6 @@ function lireArticle(string $titre) // recupere un article par son titre
             echo "</tr>";
         }
     }
-        
-
-    
 }
 
 

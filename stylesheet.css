@@ -7,14 +7,12 @@ body {
     text-align: center;
   }
   
-  p {
+  p, label {
     font-family: verdana;
     font-size: 20px;
   }
 
   table, td, tr {
-    margin : 200px;
-    padding: 20px;
     background-color: rgb(77, 104, 145);
     color : white;
     font-family: verdana;

@@ -20,15 +20,15 @@ session_start();
 				echo "id = " + $_SESSION['identifiant'] + " et mdp = " + $_SESSION['mdp'];
 				$co .= getRedactorById($_SESSION['id']);
 			} else {
-				$co .= 'Déconnecté';
+				$co .= 'Déconnecté</br>';
 			}
-			$co.= '</span>'."\n\t\t\t".'</div>'."\n\t\t";
+			$co.= '</span>'."\n\t\t\t".'</div>'."\n\t\t</br>";
 			echo $co;
 			
 			$arr=getThem(); //fct dans le query.php qui stocke les articles dans un tableau d'articles 
 			
 			$path_to_home="./home.php";
-			echo "<a href=$path_to_home>retour accueil</a>";
+			echo "<a href=$path_to_home>retour accueil</a></br></br>";
 
 
 			function home() {

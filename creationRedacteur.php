@@ -22,7 +22,7 @@
             <br /><br />
 
             <label for="identifiant">Identifiant :</label>
-            <input type="email" name="identifiant" size="45" maxlength="60" placeholder="Exemple : exemple@exemple.com" value="" required>
+            <input type="email" name="mail" size="45" maxlength="60" placeholder="Exemple : exemple@exemple.com" value="" required>
 
             <br /><br />
 

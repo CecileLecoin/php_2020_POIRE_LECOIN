@@ -30,7 +30,7 @@ TODO :
         </table>
         <br />
         <br />
-        <a href="authentification.php">Connexion au compte redacteur</a>
+        <a href="authentification.php">Connexion au compte redacteur</a></br>
 
         <?php
         $co 
