@@ -34,17 +34,15 @@ function getThem()
     return $arr;
 }
 
-function getTheme()
+function getDescriptionTheme()
 {
     require 'connexionBDD.php';
     include_once 'index.php';
 
-    $i=0;
     $result = $objPdo->query('SELECT * FROM theme');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
-        $arr[$i]= new Theme($row->idtheme, $row->description);
-        $i++;
+        $arr[]= $row->description;
     }
     return $arr;
 }
