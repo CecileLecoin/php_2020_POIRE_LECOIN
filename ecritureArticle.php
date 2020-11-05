@@ -32,7 +32,7 @@
                 <br /><br />
                 
                 <label for="textenews">News :</label>
-				<textarea name="textenews" width="100" heigth="200" maxlength="299" value="" required>
+				<textarea name="textenews" width="100" heigth="200" maxlength="299" value="" required></textarea>
 				<br /><br />
                 <input type="submit" name="valider" value="Valider">
                 
