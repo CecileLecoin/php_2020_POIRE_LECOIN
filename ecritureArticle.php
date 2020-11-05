@@ -14,7 +14,7 @@
                 include_once 'query.php';
                 include_once 'index.php';
                 $i=0;
-                $arrTheme[]=getDescriptionTheme();
+                getDescriptionTheme();
                 foreach($arrTheme as $value)
                 {
                     echo "<option unselected> $value </option>";

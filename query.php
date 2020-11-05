@@ -40,14 +40,14 @@ function getDescriptionTheme()
     include_once 'index.php';
 
     echo "here";
-    $result = $objPdo->query('SELECT description FROM theme');
+    $result = $objPdo->query('SELECT * FROM theme');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
-        $arr[]= $row->description;
+        $arrTheme[]= $row->description;
         echo "row : " + $row->description;
         echo "arr : " + $arr;
     }
-    return $arr;
+    //return $arr;
 }
 
 include_once 'article.php';
