@@ -6,16 +6,18 @@
     </head>
 
     <body>
+    
 
         <?php
+        include_once 'query.php';
             function listeTheme() {
+                include_once 'query.php';
+                include_once 'index.php';
                 $i=0;
-                $arr=getDescriptionTheme();
-                //foreach($arr->descrition as $value)
-                for($i=0; $i<10; $i++)
+                $arrTheme[]=getDescriptionTheme();
+                foreach($arrTheme as $value)
                 {
-                    echo "<option unselected> $i </option>";
-                    //echo "<option unselected> $value </option>";
+                    echo "<option unselected> $value </option>";
                 }
             }
 
