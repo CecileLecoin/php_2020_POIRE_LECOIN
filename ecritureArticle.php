@@ -11,9 +11,11 @@
             function listeTheme() {
                 $i=0;
                 $arr=getTheme();
-                foreach($arr->descrition as $value)
+                //foreach($arr->descrition as $value)
+                for($i=0; $i<10; $i++)
                 {
-                    echo "<option unselected> $value </option>";
+                    echo "<option unselected> $i </option>";
+                    //echo "<option unselected> $value </option>";
                 }
             }
 
