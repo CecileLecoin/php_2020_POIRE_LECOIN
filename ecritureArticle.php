@@ -10,7 +10,7 @@
         <?php
             function listeTheme() {
                 $i=0;
-                $arr=getTheme();
+                $arr=getDescriptionTheme();
                 //foreach($arr->descrition as $value)
                 for($i=0; $i<10; $i++)
                 {

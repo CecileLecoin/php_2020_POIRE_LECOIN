@@ -39,10 +39,11 @@ function getDescriptionTheme()
     require 'connexionBDD.php';
     include_once 'index.php';
 
-    $result = $objPdo->query('SELECT * FROM theme');
+    $result = $objPdo->query('SELECT description FROM theme');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
-        $arr[]= $row->description;
+        $arr[]= $row['description'];
+        echo "row : " + $row['description'] + "arr : " + $arr;
     }
     return $arr;
 }
