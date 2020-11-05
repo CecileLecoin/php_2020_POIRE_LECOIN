@@ -9,15 +9,6 @@
     
 
         <?php
-
-include_once 'query.php';
-include_once 'index.php';
-        $arrTheme=getDescriptionTheme();
-        
-        foreach($arrTheme as $value)
-                {
-                    echo $value;
-                }
         
             function listeTheme() {
                 include_once 'query.php';
@@ -27,19 +18,6 @@ include_once 'index.php';
                 foreach($arrTheme as $value)
                 {
                     echo "<option unselected> $value </option>";
-                }
-            }
-
-            function B() {
-                include_once 'query.php';
-                include_once 'index.php';
-                $i=0;
-                //echo "<p>there</p>";
-                //$arrTheme=getDescriptionTheme();
-                //foreach($arrTheme as $value)
-                for($i=0; $i<10; $i++)
-                {
-                    echo "<option unselected> $i </option>";
                 }
             }
 
@@ -54,7 +32,7 @@ include_once 'index.php';
                 <br /><br />
                 
                 <label for="textenews">News :</label>
-				<input type="text" id="textenews" name="textenews" width="100" heigth="200" maxlength="299" value="" required>
+				<textarea name="textenews" width="100" heigth="200" maxlength="299" value="" required>
 				<br /><br />
                 <input type="submit" name="valider" value="Valider">
                 
