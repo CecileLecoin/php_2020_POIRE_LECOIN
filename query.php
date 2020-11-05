@@ -25,7 +25,6 @@ function getThem()
     require 'connexionBDD.php';
     include_once 'index.php';
 
-    $arr[]=array();
     $result = $objPdo->query('SELECT * FROM news');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
@@ -39,15 +38,13 @@ function getDescriptionTheme()
     require 'connexionBDD.php';
     include_once 'index.php';
 
-    echo "here";
     $result = $objPdo->query('SELECT * FROM theme');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
         $arrTheme[]= $row->description;
-        echo "row : " + $row->description;
-        echo "arr : " + $arr;
+        echo "row : " . $row->description;
     }
-    //return $arr;
+    return $arrTheme;
 }
 
 include_once 'article.php';

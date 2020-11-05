@@ -9,17 +9,37 @@
     
 
         <?php
-        include_once 'query.php';
-        include_once 'index.php';
+
+include_once 'query.php';
+include_once 'index.php';
+        $arrTheme=getDescriptionTheme();
+        
+        foreach($arrTheme as $value)
+                {
+                    echo $value;
+                }
+        
             function listeTheme() {
                 include_once 'query.php';
                 include_once 'index.php';
-                $i=0;
+                $arrTheme=getDescriptionTheme();
                 echo "<p>there</p>";
-                getDescriptionTheme();
                 foreach($arrTheme as $value)
                 {
                     echo "<option unselected> $value </option>";
+                }
+            }
+
+            function B() {
+                include_once 'query.php';
+                include_once 'index.php';
+                $i=0;
+                //echo "<p>there</p>";
+                //$arrTheme=getDescriptionTheme();
+                //foreach($arrTheme as $value)
+                for($i=0; $i<10; $i++)
+                {
+                    echo "<option unselected> $i </option>";
                 }
             }
 
@@ -29,7 +49,7 @@
 				<input type="text" id="idnews" name="idnews" size="3" maxlength="5" placeholder="à changer" value="">-->
                 
                 <label for="theme">Id theme :</label>
-                <select name="theme" required> <?php listeTheme() ?> </select>
+                <select> <?php listeTheme() ?> </select>
                 
                 <br /><br />
                 
