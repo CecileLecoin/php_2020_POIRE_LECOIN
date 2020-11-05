@@ -15,7 +15,7 @@
                 include_once 'query.php';
                 include_once 'index.php';
                 $i=0;
-                echo "there";
+                echo "<p>there</p>";
                 getDescriptionTheme();
                 foreach($arrTheme as $value)
                 {
