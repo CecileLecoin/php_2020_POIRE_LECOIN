@@ -20,6 +20,14 @@ body {
     padding : 20px;
   }
 
-  input, select {
-    
+  input {
+    visibility: hidden;
+    color: rgb(77, 104, 145);
+    padding : 200px;
+    outline: none;
+  }
+
+  select {
+    background-color : linear-gradient(lightblue, blue);;
+
   }
