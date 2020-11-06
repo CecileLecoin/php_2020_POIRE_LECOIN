@@ -12,7 +12,7 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
         $arr[]= new Article($row->idnews, $row->idtheme ,$row->titrenews , $row->datenews, $row->textenews, $row->idredacteur);
         echo "<tr>";
         /*echo "<td>" . $row->idnews . "</td></br>";
-        echo "<td>" . $row->idtheme . "</td></br>";*/
+        echo "<td>" . $row->idtheme . "</td></br>";*/ //inutile à l'affichage
         echo '<td id=titre><form method ="get" action ="lectureArticle.php"><input type="text" id="titrenews" name="titrenews" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br></br>';
         echo "</tr><tr><td>" . $row->datenews . "</td>";
         echo "<td>" . $row->textenews . "</td>";
@@ -41,30 +41,10 @@ function getDescriptionTheme()
     $result = $objPdo->query('SELECT * FROM theme');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
-        $arrTheme[]= $row->description;
+        $arrTheme[]= $row->descript;
     }
     return $arrTheme;
 }
-
-include_once 'article.php';
-/*function lectureArticle(int $id) { //recupere un article par son id
-
-    require 'connexionBDD.php';
-
-    $result = $objPdo->prepare('SELECT * FROM news WHERE idnews=:id');
-    $result->bindParam(':id', $id);
-    $result->execute();
-    while ($row=$result->fetch(PDO::FETCH_OBJ))
-    {
-        echo "<tr>";
-        echo "<td>" . $row->idnews . "</td>";
-        echo "<td>" . $row->idtheme . "</td>";
-        echo "<td>" . $row->titrenews . "</td>";
-        echo "<td>" . $row->datenews . "</td>";
-        echo "<td>" . $row->textenews . "</td>";
-        echo "</tr>";
-    }
-}*/
 
 function lireArticle(string $titre) // recupere un article par son titre
 {
@@ -94,10 +74,53 @@ function lireArticle(string $titre) // recupere un article par son titre
     }
 }
 
+function setNews(string $themeD, string $titre, string $texte, string $redacN){
+    require 'connexionBDD.php';
+    $idT=getIdTheme($themeD);
+    $idR=getIdRedacteur($redacN);
+    $result = $objPdo->prepare('INSERT INTO news (idtheme, titrenews, datenews, textenews, idredacteur) VALUE (:theme, :titre, now(), :texte, :redacteur)');
+    $result->bindParam(':theme', $idT);
+    $result->bindParam(':titre', $titre);
+    $result->bindParam(':texte', $texte);
+    $result->bindParam(':redacteur', $idR);
+    echo "theme : " . $idT . " titre : " . $titre . " redac : " . $idR ;
+    //$result->execute();
+    if($result->execute()) echo "";
+    else { echo "\nPDO::errorInfo():\n";
+
+        print_r($result->errorInfo());}
+}
+
+function getIdTheme(string $description){
+        require 'connexionBDD.php';
+        $result2 = $objPdo->prepare('SELECT * FROM theme WHERE descript=:theme');
+        $result2->bindParam(':theme', $description);
+        $result2->execute();  
+        while ($row=$result2->fetch(PDO::FETCH_OBJ))
+        {
+            return $row->idtheme;
+            die();
+        }
+}
+
+function getIdRedacteur(string $nom){
+    require 'connexionBDD.php';
+    $result2 = $objPdo->prepare('SELECT * FROM redacteur');
+    $result2->execute();  
+    while ($row=$result2->fetch(PDO::FETCH_OBJ))
+    {
+        $compare = $row->nom . " " . $row->prenom;
+        echo $compare;
+        echo "</br>" . $nom;
+        echo $row->idredacteur;
+        if(strcmp($compare, $nom)==0) { return $row->idredacteur;}
+        
+    }
+}
+
 function getRedacteurInfos() {
         require 'connexionBDD.php';
         $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur');
-        $result2->bindParam(':id', $id);
         $result2->execute();  
         while ($row=$result2->fetch(PDO::FETCH_OBJ))
         {

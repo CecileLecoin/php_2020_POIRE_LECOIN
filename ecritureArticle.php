@@ -3,6 +3,7 @@
 <head>
         <title>Nouvel article</title>
         <link rel="stylesheet" href="stylesheet.css" />
+        
     </head>
 
     <body>
@@ -11,8 +12,8 @@
         <?php
         
             function listeTheme() {
-                include_once 'query.php';
-                include_once 'index.php';
+                include_once 'query.php';  
+                include_once 'index.php'; 
                 $arrTheme=getDescriptionTheme();
                 foreach($arrTheme as $value)
                 {
@@ -22,7 +23,6 @@
 
             function listeRedacteur() {
                 include_once 'query.php';
-                include_once 'index.php';
                 $arrRedac=getRedacteurInfos();
                 foreach($arrRedac as $value)
                 {
@@ -31,18 +31,21 @@
             }
 
         ?>
-            <form name="add" method="post" action="envoiNews.php">
+            <form name="add" method="post" action="envoieNews.php">
 			    <!--<label for="idnews">Idnews :</label>
 				<input type="text" id="idnews" name="idnews" size="3" maxlength="5" placeholder="à changer" value="">-->
                 
-                <label for="theme">Id theme :</label>
-                <select> <?php listeTheme() ?> </select>
+                <label for="theme">Theme de la news :</label>
+                <select name="theme"> <?php listeTheme() ?> </select>
+                <br />
+                <label for="redacteur">Redacteur :</label>
+                <select name="redacteur"> <?php listeRedacteur() ?> </select>
+                
+                <br /><br /><br />
 
-                <label for="theme">Id theme :</label>
-                <select> <?php listeRedacteur() ?> </select>
-                
-                <br /><br />
-                
+                <label for="titre">Titre :</label>
+				<input type="text" id="titre" name="titre" value="">
+                <br />
                 <label for="textenews">News :</label>
 				<textarea name="textenews" width="200" heigth="300" maxlength="299" value="" required></textarea>
 				<br /><br />
