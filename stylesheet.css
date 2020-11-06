@@ -28,6 +28,7 @@ body {
   }
 
   select {
-    background-color : linear-gradient(lightblue, blue);;
+    background-color : lightblue;
+    color: rgb(77, 104, 145);
 
   }

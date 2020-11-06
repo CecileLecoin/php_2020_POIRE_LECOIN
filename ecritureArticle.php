@@ -31,15 +31,17 @@
             }
 
         ?>
+
+        
             <form name="add" method="post" action="envoieNews.php">
 			    <!--<label for="idnews">Idnews :</label>
 				<input type="text" id="idnews" name="idnews" size="3" maxlength="5" placeholder="à changer" value="">-->
                 
                 <label for="theme">Theme de la news :</label>
-                <select name="theme"> <?php listeTheme() ?> </select>
+                <select name="theme" style="background-color : #66b5ff"> <?php listeTheme() ?> </select>
                 <br />
                 <label for="redacteur">Redacteur :</label>
-                <select name="redacteur"> <?php listeRedacteur() ?> </select>
+                <select name="redacteur" style="background-color : #66b5ff"> <?php listeRedacteur() ?> </select>
                 
                 <br /><br /><br />
 
