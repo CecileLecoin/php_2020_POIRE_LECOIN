@@ -22,7 +22,7 @@ TODO :
             include_once 'query.php';
             include_once 'article.php';
             listArticle();
-            echo "\n\n\n\n\n";
+            echo "\n";
 
             ?>
         </table>

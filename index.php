@@ -32,7 +32,7 @@ session_start();
 			
 
 			$path_to_home="./home.php";
-			echo "<a href=$path_to_home>retour accueil</a></br></br>";
+			echo "<a href=$path_to_home>retour accueil</a></br>";
 
 
 			function home() {
