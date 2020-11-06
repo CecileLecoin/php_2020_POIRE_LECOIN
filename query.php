@@ -15,7 +15,7 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
         echo "<td>" . $row->idtheme . "</td></br>";*/ //inutile à l'affichage
         echo "</tr><tr><td>" . $row->datenews . "</td>";
         echo '<td id=titre><form method ="get" action ="lectureArticle.php" ><input type="text" id="titrenews" name="titrenews" class="titre-pass" style="background-color : rgb(77, 104, 145); color : white; font-family: verdana" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br></br>';
-        
+
         echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";
     }
@@ -65,11 +65,11 @@ function lireArticle(string $titre) // recupere un article par son titre
         $redac= $row->idredacteur;
         $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
         $result2->bindParam(':id', $redac);
-        $result2->execute();  
+        $result2->execute();
         while ($row=$result2->fetch(PDO::FETCH_OBJ))
         {
             echo "</tr><tr><td>" . $row->nom;
-            echo " " . $row->prenom . "</td>";      
+            echo " " . $row->prenom . "</td>";
             echo "</tr>";
         }
     }
@@ -96,7 +96,7 @@ function getIdTheme(string $description){
         require 'connexionBDD.php';
         $result2 = $objPdo->prepare('SELECT * FROM theme WHERE descript=:theme');
         $result2->bindParam(':theme', $description);
-        $result2->execute();  
+        $result2->execute();
         while ($row=$result2->fetch(PDO::FETCH_OBJ))
         {
             return $row->idtheme;
@@ -107,7 +107,7 @@ function getIdTheme(string $description){
 function getIdRedacteur(string $nom){
     require 'connexionBDD.php';
     $result2 = $objPdo->prepare('SELECT * FROM redacteur');
-    $result2->execute();  
+    $result2->execute();
     while ($row=$result2->fetch(PDO::FETCH_OBJ))
     {
         $compare = $row->nom . " " . $row->prenom;
@@ -115,14 +115,14 @@ function getIdRedacteur(string $nom){
         echo "</br>" . $nom;
         echo $row->idredacteur;
         if(strcmp($compare, $nom)==0) { return $row->idredacteur; die;}
-        
+
     }
 }
 
 function getRedacteurInfos() {
         require 'connexionBDD.php';
         $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur');
-        $result2->execute();  
+        $result2->execute();
         while ($row=$result2->fetch(PDO::FETCH_OBJ))
         {
             $arrRedac[]= $row->nom . " " . $row->prenom;
@@ -150,14 +150,14 @@ function getRedactorById(int $id) {
     }
 }
 
-function mailRedacteurIsAlreadyUse(string $mail) 
+function mailRedacteurIsAlreadyUse(string $mail)
 {
     require 'connexionBDD.php';
 
     $result = $objPdo->prepare('SELECT idredacteur FROM redacteur WHERE adressemail=:mail');
     $result->bindParam(':mail', $mail);
     $result->execute();
-    
+
     if ($result->rowCount() > 0)
     {
         return true;
@@ -168,7 +168,7 @@ function mailRedacteurIsAlreadyUse(string $mail)
     }
 }
 
-function creationRedacteur()
+function creationRedacteurBDD($nom, $prenom, $mail, $mdp)
 {
     require 'connexionBDD.php';
 
@@ -179,6 +179,7 @@ function creationRedacteur()
     $result->bindParam(':mdp', $mdp);
     $result->execute();
     // $id =  mysql_insert_id();
+    echo mysql_insert_id($result);
 
 }
 
