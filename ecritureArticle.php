@@ -14,8 +14,17 @@
                 include_once 'query.php';
                 include_once 'index.php';
                 $arrTheme=getDescriptionTheme();
-                echo "<p>there</p>";
                 foreach($arrTheme as $value)
+                {
+                    echo "<option unselected> $value </option>";
+                }
+            }
+
+            function listeRedacteur() {
+                include_once 'query.php';
+                include_once 'index.php';
+                $arrRedac=getRedacteurInfos();
+                foreach($arrRedac as $value)
                 {
                     echo "<option unselected> $value </option>";
                 }
@@ -28,11 +37,14 @@
                 
                 <label for="theme">Id theme :</label>
                 <select> <?php listeTheme() ?> </select>
+
+                <label for="theme">Id theme :</label>
+                <select> <?php listeRedacteur() ?> </select>
                 
                 <br /><br />
                 
                 <label for="textenews">News :</label>
-				<textarea name="textenews" width="100" heigth="200" maxlength="299" value="" required></textarea>
+				<textarea name="textenews" width="200" heigth="300" maxlength="299" value="" required></textarea>
 				<br /><br />
                 <input type="submit" name="valider" value="Valider">
                 

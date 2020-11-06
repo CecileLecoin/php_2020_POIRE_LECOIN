@@ -42,7 +42,6 @@ function getDescriptionTheme()
     while ($row=$result->fetch(PDO::FETCH_OBJ))
     {
         $arrTheme[]= $row->description;
-        echo "row : " . $row->description;
     }
     return $arrTheme;
 }
@@ -81,18 +80,31 @@ function lireArticle(string $titre) // recupere un article par son titre
         echo "<td>" . $row->idtheme . "</td>";*/
         echo "</tr><tr><td>" . $row->titrenews . "</td></br></br></br>";
         echo "</tr><tr><td>" . $row->datenews . "</td>";
-        //echo "</tr><tr><td>" . $row->textenews . "</td>";
+        echo "</tr><tr><td>" . $row->textenews . "</td>";
         $redac= $row->idredacteur;
         $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur WHERE idredacteur=:id');
         $result2->bindParam(':id', $redac);
         $result2->execute();  
         while ($row=$result2->fetch(PDO::FETCH_OBJ))
         {
-            echo "</tr><tr><td>" . $row->nom . "</td>";
-            echo "<td>" . $row->prenom . "</td>";      
+            echo "</tr><tr><td>" . $row->nom;
+            echo " " . $row->prenom . "</td>";      
             echo "</tr>";
         }
     }
+}
+
+function getRedacteurInfos() {
+        require 'connexionBDD.php';
+        $result2 = $objPdo->prepare('SELECT nom, prenom FROM redacteur');
+        $result2->bindParam(':id', $id);
+        $result2->execute();  
+        while ($row=$result2->fetch(PDO::FETCH_OBJ))
+        {
+            $arrRedac[]= $row->nom . " " . $row->prenom;
+        }
+        return $arrRedac;
+
 }
 
 
