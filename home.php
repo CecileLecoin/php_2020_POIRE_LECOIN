@@ -4,9 +4,9 @@
 /////
 /////
 TODO : 
-- lien pour ce deconnecter 
+-FAIT------ lien pour ce deconnecter 
 - lien pour créer un rédacteur
-- Si le redacteur est co, lien pour créer un article
+-FAIT------ Si le redacteur est co, lien pour créer un article
 ///-->
 
 
@@ -23,8 +23,6 @@ TODO :
             include_once 'article.php';
             listArticle();
             echo "\n\n\n\n\n";
-            //$article = new Article(1, "", "", "", "", "");
-            //lectureArticle($article->getIdnews())
 
             ?>
         </table>

@@ -16,4 +16,10 @@ body {
     background-color: rgb(77, 104, 145);
     color : white;
     font-family: verdana;
+    margin : 20px;
+    padding : 20px;
+  }
+
+  input, select {
+    
   }

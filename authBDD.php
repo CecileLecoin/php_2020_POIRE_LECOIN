@@ -10,7 +10,7 @@
 			$result = $result->fetch();
             if ($result != null) {
 				$_SESSION['authBDD'] = 'true';
-				$_SESSION['id'] = $_POST['identifiant'];
+				$_SESSION['id'] = (int)$result[0];
 				
 				home();
 				die();

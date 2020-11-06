@@ -3,7 +3,7 @@ session_start();
 			if (isset($_SESSION['authBDD'])) {
 				if ($_SESSION['authBDD'] == 'true') { //La session est celle d'un redacteur (redacteur est connecté)
 					$auth = true;
-					echo "<a href=./ecritureArticle.php>Ecrire un article</a></br></br>";
+					
 				} else {
 					$auth = false;
 				}
@@ -19,7 +19,9 @@ session_start();
 			$co.='<id="status">';
 			if ($auth) {
 				echo "id = " . $_SESSION['id'];
-				$co .= getRedactorById($_SESSION['id']);
+				$co .= getRedactorById((int)$_SESSION['id']);
+				echo "<a href=./ecritureArticle.php>Ecrire un article</a></br></br>";
+				echo "<a href=./disconnect.php>Déconnexion</a></br></br>";
 			} else {
 				$co .= 'Déconnecté</br>';
 			}

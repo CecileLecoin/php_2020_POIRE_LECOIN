@@ -13,8 +13,9 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
         echo "<tr>";
         /*echo "<td>" . $row->idnews . "</td></br>";
         echo "<td>" . $row->idtheme . "</td></br>";*/ //inutile à l'affichage
-        echo '<td id=titre><form method ="get" action ="lectureArticle.php"><input type="text" id="titrenews" name="titrenews" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br></br>';
         echo "</tr><tr><td>" . $row->datenews . "</td>";
+        echo '<td id=titre><form method ="get" action ="lectureArticle.php"><input type="text" id="titrenews" name="titrenews" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br></br>';
+        
         echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";
     }
@@ -144,7 +145,7 @@ function getRedactorById(int $id) {
             return null;
         } else {
             unset($objPdo);
-            return '<p> id="loggedUserName"'.$row['nom'].'<br /> id="loggedUserMail"'.$row['mail'].'</p>';
+            return '<p> id="loggedUserName"'.$row->nom.'<br /> id="loggedUserMail"'.$row->adressemail.'</p>';
         }
     }
 }
