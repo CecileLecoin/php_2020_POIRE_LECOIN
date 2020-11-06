@@ -2,8 +2,13 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Authentification</title>
-		<!--<link rel="stylesheet" href="css/style.css" />
-		<link rel="stylesheet" href="css/auth.css" />-->
+		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="css/auth.css" />
+		<?php
+            require_once 'index.php';
+            include_once 'query.php';
+			include_once 'article.php';
+			?>
 	</head>
 	<body>
         <?php session_start(); 
@@ -26,6 +31,6 @@
 
 
         
-        <a href=./home.php >retour accueil</a></br>
+        
     </body>
 </html>

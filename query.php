@@ -113,7 +113,7 @@ function getIdRedacteur(string $nom){
         echo $compare;
         echo "</br>" . $nom;
         echo $row->idredacteur;
-        if(strcmp($compare, $nom)==0) { return $row->idredacteur;}
+        if(strcmp($compare, $nom)==0) { return $row->idredacteur; die;}
         
     }
 }
