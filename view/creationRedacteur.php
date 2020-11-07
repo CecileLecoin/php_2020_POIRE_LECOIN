@@ -4,7 +4,7 @@
         <title>Inscription rédacteur</title>
         <?php session_start();
         $_SESSION['authBDD'] = !true;
-        include_once "creationRedacteurBDD.php";
+        include_once "./control/creationRedacteurBDD.php";
         ?>
     </head>
 
@@ -32,8 +32,10 @@
             <br /><br />
             <input type="submit" name="valider" value="Valider">
 
-
         </form>
+        <?php 
+        
+        ?>
     </body>
 
 

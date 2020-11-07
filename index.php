@@ -12,8 +12,8 @@ session_start();
 				$auth = false;
             }
             
-			include 'connexionBDD.php';
-			include_once 'query.php';
+			include './model/connexionBDD.php';
+			include_once './model/query.php';
 			$co="\t";
 			$co.='<div class="authstatus '.(($auth)?'connected':'disconnected').'">'."\n\t\t\t\t";
 			$co.='<id="status">';
@@ -31,12 +31,12 @@ session_start();
 			//$arr=getThem(); //fct dans le query.php qui stocke les articles dans un tableau d'articles 
 			
 
-			$path_to_home="./home.php";
+			$path_to_home="./view/home.php";
 			echo "<a href=$path_to_home>retour accueil</a></br>";
 
 
 			function home() {
-				return header('Location: ./home.php');
+				return header('Location: ./view/home.php');
 			}
 			
 			

@@ -6,9 +6,9 @@
     <body>
         <table>
             <?php
-            require_once 'index.php';
-            require_once 'query.php';
-            include_once 'article.php';
+            require_once './index.php';
+            require_once './model/query.php';
+            include_once './metier/article.php';
            
             lireArticle($_GET['titrenews']);
 

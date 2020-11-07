@@ -2,8 +2,8 @@
 
 <head>
         <title>Nouvel article</title>
-        <link rel="stylesheet" href="stylesheet.css" />
-        <?php include_once 'index.php';  ?>
+        <link rel="stylesheet" href="./visuel/stylesheet.css" />
+        <?php include_once './index.php';  ?>
         
     </head>
 
@@ -13,8 +13,8 @@
         <?php
         
             function listeTheme() {
-                include_once 'query.php';  
-                include_once 'index.php'; 
+                include_once './model/query.php';  
+                include_once './index.php'; 
                 $arrTheme=getDescriptionTheme();
                 foreach($arrTheme as $value)
                 {
@@ -23,7 +23,7 @@
             }
 
             function listeRedacteur() {
-                include_once 'query.php';
+                include_once './model/query.php';
                 $arrRedac=getRedacteurInfos();
                 foreach($arrRedac as $value)
                 {
@@ -52,7 +52,7 @@
                 <label for="textenews">News :</label>
 				<textarea name="textenews" width="200" heigth="300" maxlength="299" value="" required></textarea>
 				<br /><br />
-                <input type="submit" name="valider" value="Valider">
+                <input type="submit" class="submit" name="valider" value="Valider">
                 
                 
         </form>

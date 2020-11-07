@@ -3,7 +3,7 @@
 <head>
         <title>Nouvel article</title>
         <link rel="stylesheet" href="stylesheet.css" />
-        <?php include_once 'index.php'; ?>
+        <?php include_once './index.php'; ?>
     </head>
 
     <body>

@@ -1,6 +1,6 @@
 <?php
-	require('connexionBDD.php');
-	include_once 'index.php';
+	require './model/connexionBDD.php';
+	include_once './index.php';
 	$result	=	$objPdo->prepare('select idredacteur from redacteur where adressemail = ? and motdepasse = ?');
     
     session_start();
