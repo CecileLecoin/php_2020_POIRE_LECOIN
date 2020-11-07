@@ -18,8 +18,12 @@ function creationRedacteur()
         }
         else
         {
-            creationRedacteurBDD($nom, $prenom, $mail, $mdp);
-            echo "bruh";
+            if (creationRedacteurBDD($nom, $prenom, $mail, $mdp) != null) {
+                echo "Le compte à bien été créer";
+            }
+            else {
+                echo "Une errreur est survenue dans la base de données";
+            }
 
         }
 

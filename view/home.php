@@ -15,6 +15,38 @@ TODO :
     </head>
 
     <body>
+
+    <?php
+        
+        function listeTheme() {
+            include_once '../model/query.php';  
+            include_once '../index.php'; 
+            $arrTheme=getDescriptionTheme();
+            foreach($arrTheme as $value)
+            {
+                echo "<option unselected> $value </option>";
+            }
+        }
+
+        function listeRedacteur() {
+            include_once '../model/query.php';
+            $arrRedac=getRedacteurInfos();
+            foreach($arrRedac as $value)
+            {
+                echo "<option unselected> $value </option>";
+            }
+        }
+
+    ?>
+
+
+
+        <form name="tri" method="post" action="triNews.php">
+        <select name="theme" style="background-color : #66b5ff"> <?php listeTheme() ?> </select>
+        <select name="redac" style="background-color : #66b5ff"> <?php listeRedacteur() ?> </select>
+ 
+        <input type="submit" class="submit" name="valider" value="Valider">
+
         <table class="tableauA">
         <?php
             require_once '../index.php';
