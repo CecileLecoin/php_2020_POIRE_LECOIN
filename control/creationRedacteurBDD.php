@@ -4,7 +4,7 @@ require("../model/connexionBDD.php");
 function creationRedacteur()
 {
     include "../connexion/query.php";
-
+    include_once '../index.php';
     if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['mdp']))
     {
         $nom = $_POST['nom'];
