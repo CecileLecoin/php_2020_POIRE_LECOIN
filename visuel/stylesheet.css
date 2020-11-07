@@ -86,14 +86,14 @@ body {
 
   a {
     font-family: verdana;
-    font-size: 15px;
-    color : aqua;
+    font-size: 25px;
+    color : orchid;
     text-decoration: none;
     
   }
 
   a:visited {
     text-decoration: none;
-    color : aqua;
+    color : salmon;
   }
  
