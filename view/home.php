@@ -39,6 +39,16 @@ TODO :
             echo "<option unselected> tous </option>";
         }
 
+        function listeDates() {
+            include_once '../model/query.php';
+            $arrD=getDates();
+            foreach($arrD as $value)
+            {
+                echo "<option unselected> $value </option>";
+            }
+            echo "<option unselected> toutes </option>";
+        }
+
     ?>
 
 
@@ -46,6 +56,7 @@ TODO :
         <form name="tri" method="post" action="triNews.php">
         <select name="theme" style="background-color : #66b5ff"> <?php listeTheme() ?> </select>
         <select name="redac" style="background-color : #66b5ff"> <?php listeRedacteur() ?> </select>
+        <select name="date" style="background-color : #66b5ff"> <?php listeDates() ?> </select>
  
         <input type="submit" class="submit" name="valider" value="Valider">
 

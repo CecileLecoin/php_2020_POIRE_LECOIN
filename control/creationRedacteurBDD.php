@@ -14,15 +14,16 @@ function creationRedacteur()
 
         if (mailRedacteurIsAlreadyUse($mail))
         {
-            echo "Cette adresse mail est déja utilisé";
+            return "Cette adresse mail est déja utilisé";
         }
         else
         {
-            if (creationRedacteurBDD($nom, $prenom, $mail, $mdp) != null) {
-                echo "Le compte à bien été créer";
+            $id = creationRedacteurBDD($nom, $prenom, $mail, $mdp);
+            if ($id != null) {
+                return $id;
             }
             else {
-                echo "Une errreur est survenue dans la base de données";
+                return "Une errreur est survenue dans la base de données";
             }
 
         }

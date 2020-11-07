@@ -6,12 +6,17 @@
         $_SESSION['authBDD'] = !true;
         include_once "../control/creationRedacteurBDD.php";
         include_once '../index.php';
+        function creation() {
+            // if (){
+
+            // }
+        }
         ?>
     </head>
 
     <body>
 
-        <form method="post" action="<?php creationRedacteur(); ?>">
+        <form method="post" action=<?php creation(); ?>>
             <label >Nom :</label>
             <input type="text" name="nom" size="45" maxlength="60" required>
 

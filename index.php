@@ -36,7 +36,7 @@ session_start();
 
 
 			function home() {
-				return header('Location: ../view/home.php');
+				return header('Location: .//view/home.php');
 			}
 			
 			
