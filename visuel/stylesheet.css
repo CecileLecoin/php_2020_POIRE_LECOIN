@@ -87,8 +87,13 @@ body {
   a {
     font-family: verdana;
     font-size: 15px;
-    color : rgb(rgb(9, 27, 87), green, blue);
+    color : aqua;
     text-decoration: none;
-    text-decoration-color: aqua;
+    
+  }
+
+  a:visited {
+    text-decoration: none;
+    color : aqua;
   }
  
