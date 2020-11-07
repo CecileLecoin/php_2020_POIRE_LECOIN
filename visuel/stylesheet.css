@@ -39,8 +39,12 @@ body {
   }
 
   select {
-    background-color : lightblue;
-    color: rgb(77, 104, 145);
+    background-color : linear-gradient(lightblue, blue);
+    font-family: verdana;
+    font-size: 20px;
+    color : white;
+    margin : 10px;
+    padding : 10px;
 
   }
 
@@ -61,5 +65,11 @@ body {
     bottom: 23px;
     right: 28px;
     width: 280px;
+  }
+
+  textarea {
+    font-family: verdana;
+    font-size: 20px;
+    padding : 30px;
   }
  
