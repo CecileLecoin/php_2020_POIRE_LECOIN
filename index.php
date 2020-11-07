@@ -20,8 +20,8 @@ session_start();
 			if ($auth) {
 				echo "id = " . $_SESSION['id'];
 				$co .= getRedactorById((int)$_SESSION['id']);
-				echo "<a href=../ecritureArticle.php>Ecrire un article</a></br></br>";
-				echo "<a href=../disconnect.php>Déconnexion</a></br></br>";
+				echo "<a href=../view/ecritureArticle.php>Ecrire un article</a></br></br>";
+				echo "<a href=../control/disconnect.php>Déconnexion</a></br></br>";
 			} else {
 				$co .= 'Déconnecté</br>';
 			}
