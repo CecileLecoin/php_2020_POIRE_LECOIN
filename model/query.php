@@ -16,7 +16,7 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
         echo "<td>" . $row->idtheme . "</td></br>";*/ //inutile à l'affichage
         echo "</tr><tr><td>" . $row->datenews . "</td>";
         echo "</tr><tr><td>" . $row->titrenews . "</td>";
-        echo '<td id=titre><form method ="get" action ="lectureArticle.php" ><input type="text" id="titrenews" name="titrenews" class="titre-pass" style="background-color : rgb(77, 104, 145); color : white; font-family: verdana" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br></br>';
+        echo '<td id=titre><form method ="get" action ="lectureArticle.php" ><input type="text" id="titrenews" name="titrenews" class="titre-pass" style="background-color : rgb(77, 104, 145); color : white; font-family: verdana" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br>';
 
         echo "<td>" . $row->textenews . "</td>";
         echo "</tr>";
