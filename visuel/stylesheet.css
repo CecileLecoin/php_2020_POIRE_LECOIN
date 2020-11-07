@@ -18,10 +18,10 @@ body {
     font-family: verdana;
     margin : 20px;
     padding : 20px;
-    border-radius: 5%;
+    border-radius: 0.5%;
   }
 
-  input {
+  .titre-pass {
     visibility: hidden;
     color: rgb(77, 104, 145);
     padding : 200px;
