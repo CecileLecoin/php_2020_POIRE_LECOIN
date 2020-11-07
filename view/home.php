@@ -6,7 +6,6 @@
 TODO : 
 -message une fois l'article redigé
 - lien pour créer un rédacteur
--FAIT------ Si le redacteur est co, lien pour créer un article
 ///-->
 
 

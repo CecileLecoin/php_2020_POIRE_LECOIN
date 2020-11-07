@@ -19,6 +19,7 @@
                 if(isset($_POST['textenews']))
                 {
                     setNews($_POST['theme'], $_POST['titre'], $_POST['textenews'], $_POST['redacteur']);
+                    echo "Article rédigé ! Vous pouvez vous retourner à l'accueil :)";
                 }
                 else
                 echo "texte incorrect";
