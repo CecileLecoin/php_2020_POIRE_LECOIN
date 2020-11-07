@@ -10,12 +10,21 @@
 
     <?php
     
-    if(isset($_POST['theme']))
-    {
-        if(isset($_POST['redac']))
-        {
+    if(isset($_POST['theme']) && $_POST['theme']!="tous")
+    { 
+        if(isset($_POST['redac'])&& $_POST['redac']!="tous")
+        
             getArticlesByRedacteurAndTheme($_POST['theme'], $_POST['redac']);
-        }
-        else {
+        
+        else 
             getArticlesByTheme($_POST['theme']);
-        }
+    
+    }
+    else 
+        getArticlesByRedacteur($_POST['redac']);
+
+        ?>
+
+    </body>
+
+</html>

@@ -79,6 +79,33 @@ function getArticlesByTheme(string $themeD)
 }
 
 
+function getArticlesByRedacteur(string $redacN) //donne tous les articles et les ecrit + bonus = clicker sur le texte mene à une page avec l'article en entier
+{
+    require 'connexionBDD.php';
+    include_once '../index.php';
+    include_once '../metier/article.php';
+
+    $arr[]=array();
+    $result = $objPdo->prepare('SELECT * FROM news WHERE idredacteur=:idR');
+    $idR=getIdRedacteur($redacN);
+    $result->bindParam(':idR', $idR);
+    $result->execute();
+    while ($row=$result->fetch(PDO::FETCH_OBJ))
+    {
+        $arr[]= new Article($row->idnews, $row->idtheme ,$row->titrenews , $row->datenews, $row->textenews, $row->idredacteur);
+        echo "<tr>";
+        /*echo "<td>" . $row->idnews . "</td></br>";
+        echo "<td>" . $row->idtheme . "</td></br>";*/ //inutile à l'affichage
+        echo "</tr><tr><td>" . $row->datenews . "</td>";
+        echo "</tr><tr><td>" . $row->titrenews . "</td>";
+        echo '<td id=titre><form method ="get" action ="lectureArticle.php" ><input type="text" id="titrenews" name="titrenews" class="titre-pass" style="background-color : rgb(77, 104, 145); color : white; font-family: verdana" placeholder="'.$row->titrenews.'" value ="'.$row->titrenews.'" readonly><input type="submit" value="Voir plus"></form></td></br></br>';
+
+        echo "<td>" . $row->textenews . "</td>";
+        echo "</tr>";
+    }
+}
+
+
 function getThem()
 {
     require 'connexionBDD.php';

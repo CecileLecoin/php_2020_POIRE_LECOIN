@@ -26,6 +26,7 @@ TODO :
             {
                 echo "<option unselected> $value </option>";
             }
+            echo "<option unselected> tous </option>";
         }
 
         function listeRedacteur() {
@@ -35,6 +36,7 @@ TODO :
             {
                 echo "<option unselected> $value </option>";
             }
+            echo "<option unselected> tous </option>";
         }
 
     ?>
