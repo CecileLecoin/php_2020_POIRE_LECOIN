@@ -18,13 +18,23 @@ body {
     font-family: verdana;
     margin : 10px;
     padding : 10px;
-    border-radius: 0.5%;
+    border-radius: 0.2%;
+  }
+
+  input {
+    background-color: rgb(138, 193, 211);
+    font-family: verdana;
+    font-size: 20px;
+    color : white;
+    margin : 10px;
+    padding : 10px;
+    border-radius: 0.2%;
   }
 
   .titre-pass {
     visibility: hidden;
     color: rgb(77, 104, 145);
-    padding : 200px;
+    padding : 2px;
     outline: none;
   }
 
