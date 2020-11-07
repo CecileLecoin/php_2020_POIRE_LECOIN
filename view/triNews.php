@@ -9,7 +9,7 @@
     <body>
 
     <?php
-    
+    include_once '../index.php';
     if(isset($_POST['theme']) && $_POST['theme']!="tous")
     { 
         if(isset($_POST['redac'])&& $_POST['redac']!="tous")
