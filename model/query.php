@@ -3,7 +3,7 @@
 function listArticle() //donne tous les articles et les ecrit + bonus = clicker sur le texte mene à une page avec l'article en entier
 {
     require 'connexionBDD.php';
-    include_once './index.php';
+    include_once '../index.php';
 
     $arr[]=array();
     $result = $objPdo->query('SELECT * FROM news');
@@ -24,7 +24,7 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
 function getThem()
 {
     require 'connexionBDD.php';
-    include_once './index.php';
+    include_once '../index.php';
 
     $result = $objPdo->query('SELECT * FROM news');
     while ($row=$result->fetch(PDO::FETCH_OBJ))
@@ -37,7 +37,7 @@ function getThem()
 function getDescriptionTheme()
 {
     require 'connexionBDD.php';
-    include_once './index.php';
+    include_once '../index.php';
 
     $result = $objPdo->query('SELECT * FROM theme');
     while ($row=$result->fetch(PDO::FETCH_OBJ))

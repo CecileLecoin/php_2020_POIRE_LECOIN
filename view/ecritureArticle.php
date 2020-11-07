@@ -3,7 +3,7 @@
 <head>
         <title>Nouvel article</title>
         <link rel="stylesheet" href="./visuel/stylesheet.css" />
-        <?php include_once './index.php';  ?>
+        <?php include_once '../index.php';  ?>
         
     </head>
 
@@ -13,8 +13,8 @@
         <?php
         
             function listeTheme() {
-                include_once './model/query.php';  
-                include_once './index.php'; 
+                include_once '../model/query.php';  
+                include_once '../index.php'; 
                 $arrTheme=getDescriptionTheme();
                 foreach($arrTheme as $value)
                 {
@@ -23,7 +23,7 @@
             }
 
             function listeRedacteur() {
-                include_once './model/query.php';
+                include_once '../model/query.php';
                 $arrRedac=getRedacteurInfos();
                 foreach($arrRedac as $value)
                 {

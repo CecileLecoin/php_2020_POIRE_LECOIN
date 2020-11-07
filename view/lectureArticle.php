@@ -1,14 +1,14 @@
 <head>
         <title>Liste des articles</title>
-        <link rel="stylesheet" href="stylesheet.css" />
+        <link rel="stylesheet" href="../visuel/stylesheet.css" />
     </head>
 
     <body>
         <table>
             <?php
-            require_once './index.php';
-            require_once './model/query.php';
-            include_once './metier/article.php';
+            require_once '../index.php';
+            require_once '../model/query.php';
+            include_once '../metier/article.php';
            
             lireArticle($_GET['titrenews']);
 

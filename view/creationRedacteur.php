@@ -4,7 +4,7 @@
         <title>Inscription rédacteur</title>
         <?php session_start();
         $_SESSION['authBDD'] = !true;
-        include_once "./control/creationRedacteurBDD.php";
+        include_once "../control/creationRedacteurBDD.php";
         ?>
     </head>
 
@@ -34,7 +34,7 @@
 
         </form>
         <?php 
-        
+
         ?>
     </body>
 

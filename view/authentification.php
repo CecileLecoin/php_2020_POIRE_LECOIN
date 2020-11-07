@@ -2,11 +2,11 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>Authentification</title>
-		<link rel="stylesheet" href="./visuel/style.css" />
+		<link rel="stylesheet" href="../visuel/style.css" />
 		<?php
-            require_once './index.php';
-            include_once './model/query.php';
-			include_once './metier/article.php';
+            require_once '../index.php';
+            include_once '../model/query.php';
+			include_once '../metier/article.php';
 			?>
 	</head>
 	<body>

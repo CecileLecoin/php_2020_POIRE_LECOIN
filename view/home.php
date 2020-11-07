@@ -12,14 +12,14 @@ TODO :
 
     <head>
         <title>Liste des articles</title>
-        <link rel="stylesheet" href="./visuel/stylesheet.css" />
+        <link rel="stylesheet" href="../visuel/stylesheet.css" />
     </head>
 
     <body>
         <table class="tableauA">
         <?php
-            require_once './index.php';
-            include_once './model/query.php';
+            require_once '../index.php';
+            include_once '../model/query.php';
             listArticle();
             ?>
         </table>

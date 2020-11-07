@@ -1,9 +1,9 @@
 <?php
-require("./model/connexionBDD.php");
+require("../model/connexionBDD.php");
 
 function creationRedacteur()
 {
-    include "./connexion/query.php";
+    include "../connexion/query.php";
 
     if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['mdp']))
     {
