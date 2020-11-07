@@ -14,7 +14,7 @@
         $_SESSION['authBDD']=!true;
         ?>
 
-        <form name="add" method="post" action="authBDD.php">
+        <form name="add" method="post" action="../control/authBDD.php">
 				<label for="identifiant">Identifiant :</label>
 				<input type="email" id="identifiant" name="identifiant" size="45" maxlength="60" placeholder="Exemple : caramel@caramail.com" value="" required>
 
