@@ -2,7 +2,7 @@
 
 <head>
         <title>Articles triés</title>
-        <link rel="stylesheet" href="stylesheet.css" />
+        <link rel="stylesheet" href="../visuel/stylesheet.css" />
         <?php include_once '../index.php'; ?>
     </head>
 
