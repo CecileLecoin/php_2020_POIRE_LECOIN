@@ -4,6 +4,7 @@ function listArticle() //donne tous les articles et les ecrit + bonus = clicker 
 {
     require 'connexionBDD.php';
     include_once '../index.php';
+    include_once '../metier/article.php';
 
     $arr[]=array();
     $result = $objPdo->query('SELECT * FROM news');
