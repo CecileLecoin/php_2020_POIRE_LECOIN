@@ -67,6 +67,17 @@ body {
     width: 280px;
   }
 
+  .info {
+    background-color: rgb(138, 193, 211);
+    font-family: verdana;
+    font-size: 20px;
+    color : white;
+    margin : 10px;
+    padding : 10px;
+    border-radius: 0.1%;
+
+  }
+
   textarea {
     font-family: verdana;
     font-size: 15px;

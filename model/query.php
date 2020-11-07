@@ -180,7 +180,7 @@ function creationRedacteurBDD($nom, $prenom, $mail, $mdp)
     $result->bindParam(':mail', $mail);
     $result->bindParam(':mdp', $mdp);
     if($result->execute()) {
-        $objPdo::lastInsertId(null);
+        $result->fetch(PDO::FETCH_ASSOC);
     }
 
 
