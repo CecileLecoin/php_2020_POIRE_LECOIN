@@ -1,22 +1,15 @@
 <html>
+    <header>
+        <link rel="stylesheet" href="../visuel/stylesheet.css" />
+    </header>
 
     <head>
         <title>Inscription rédacteur</title>
-        <?php
-        $_SESSION['authBDD'] = !true;
-        include_once "../control/creationRedacteurBDD.php";
-        include_once '../index.php';
-        function creation() {
-            // if (){
-
-            // }
-        }
-        ?>
     </head>
 
     <body>
 
-        <form method="post" action=<?php creation(); ?>>
+        <form method="post" action="../control/creationRedacteurBDD.php">
             <label >Nom :</label>
             <input type="text" name="nom" size="45" maxlength="60" required>
 

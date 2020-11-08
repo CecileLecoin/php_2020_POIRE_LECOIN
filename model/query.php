@@ -254,6 +254,7 @@ function getRedacteurInfos() {
 }
 
 
+
 function getRedactorById(int $id) {
     require 'connexionBDD.php';
 
@@ -300,10 +301,10 @@ function creationRedacteurBDD($nom, $prenom, $mail, $mdp)
     $result->bindParam(':mail', $mail);
     $result->bindParam(':mdp', $mdp);
     if($result->execute()) {
-        return $result->fetch(PDO::FETCH_ASSOC)::lastInsertId();
+        return true;
     }
     else {
-        return $result = null;
+        return false;
     }
 
 }

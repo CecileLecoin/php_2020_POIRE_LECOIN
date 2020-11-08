@@ -3,7 +3,6 @@ require("../model/connexionBDD.php");
 
 function creationRedacteur()
 {
-    include "../connexion/query.php";
     include_once '../index.php';
     if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['mail']) && isset($_POST['mdp']))
     {
@@ -14,16 +13,16 @@ function creationRedacteur()
 
         if (mailRedacteurIsAlreadyUse($mail))
         {
-            return "Cette adresse mail est déja utilisé";
+            echo "<script>alert('Cette adresse mail est déja utilisé')</script>";
         }
         else
         {
             $id = creationRedacteurBDD($nom, $prenom, $mail, $mdp);
-            if ($id != null) {
-                return $id;
+            if ($id == true) {
+                echo "<p>Le compte à bien été créer veuillez vous reconnectez par la suite</p>";
             }
             else {
-                return "Une errreur est survenue dans la base de données";
+                echo "<script>alert('Une errreur est survenue dans la base de données')</script>";
             }
 
         }
